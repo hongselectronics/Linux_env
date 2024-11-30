@@ -44,8 +44,10 @@ This script automates the setup of a development environment for Linux systems. 
   ```
 
 4. **Select the Dracula Theme: For terminal-specific instructions**:
----
+
 -GNOME Terminal: Select the Dracula profile in Preferences > Profiles.
+
 -KDE Konsole: Apply the Dracula theme in Settings > Edit Current Profile > Appearance.
+
 -XFCE4 Terminal: Activate the Dracula theme in Preferences > Colors.
- ---
+ 
