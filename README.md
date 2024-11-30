@@ -9,14 +9,17 @@ This script automates the setup of a development environment for Linux systems. 
 - **Vim Configuration**: Configures Vim with:
   - Tab width set to 4 spaces
   - Line numbers enabled
-- **Darcula Terminal Theme**: Reminder to manually install and configure.
+- **Dracula Terminal Theme**:
+  - Automatically configures the Dracula theme for:
+    - GNOME Terminal
+    - KDE Konsole
+    - XFCE4 Terminal
 - **Development Tools**:
   - GCC, Clang, and build-essential packages
   - Boost Libraries (`libboost-all-dev` or `boost`)
   - Git
 - **Python Environment**:
-  - Python 2 & Python 3
-  - `pip2` & `pip3`
+  - Python 3 and `pip3`
   - Common Python libraries: `scipy`, `numpy`, `matplotlib`, `scikit-rf`
 
 ---
@@ -34,3 +37,15 @@ This script automates the setup of a development environment for Linux systems. 
 2. **Make the Script Executable**:
    ```bash
    chmod +x setup_dev_env.sh
+   
+3. **Run the script**:
+  ```bash
+  ./setup_dev_env.sh
+  ```
+
+4. **Select the Dracula Theme: For terminal-specific instructions**:
+
+-GNOME Terminal: Select the Dracula profile in Preferences > Profiles.
+-KDE Konsole: Apply the Dracula theme in Settings > Edit Current Profile > Appearance.
+-XFCE4 Terminal: Activate the Dracula theme in Preferences > Colors.
+ 
