@@ -39,15 +39,14 @@ This script automates the setup of a development environment for Linux systems. 
    chmod +x setup_dev_env.sh
    
 3. **Run the script**:
-  ```bash
-  ./setup_dev_env.sh
-  ```
+   ```bash
+   ./setup_dev_env.sh
 
 4. **Select the Dracula Theme: For terminal-specific instructions**:
 
--GNOME Terminal: Select the Dracula profile in Preferences > Profiles.
+  -GNOME Terminal: Select the Dracula profile in Preferences > Profiles.
 
--KDE Konsole: Apply the Dracula theme in Settings > Edit Current Profile > Appearance.
+  -KDE Konsole: Apply the Dracula theme in Settings > Edit Current Profile > Appearance.
 
--XFCE4 Terminal: Activate the Dracula theme in Preferences > Colors.
+  -XFCE4 Terminal: Activate the Dracula theme in Preferences > Colors.
  
