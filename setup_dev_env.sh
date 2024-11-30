@@ -6,22 +6,29 @@ setup_ubuntu_debian() {
 
     # Update and install packages
     sudo apt update && sudo apt upgrade -y
-    sudo apt install -y zsh git curl fonts-powerline vim gcc g++ clang python2 python3 python3-pip python-pip \
+    sudo apt install -y zsh git curl fonts-powerline vim gcc g++ clang python3 python3-pip \
         build-essential cmake make libtool pkg-config libboost-all-dev
 
     # Install oh-my-zsh
+    if ! command -v zsh &> /dev/null; then
+        echo "Zsh is not installed. Installing..."
+        sudo apt install -y zsh
+    fi
+
     if [ ! -d "$HOME/.oh-my-zsh" ]; then
+        echo "Installing Oh My Zsh..."
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
         chsh -s $(which zsh)
     fi
 
     # Set oh-my-zsh theme
+    if [ ! -f "$HOME/.zshrc" ]; then
+        touch "$HOME/.zshrc"
+    fi
     sed -i 's/^ZSH_THEME=.*/ZSH_THEME="agnoster"/' ~/.zshrc
 
     # Install Python libraries
-    pip2 install --upgrade pip
     pip3 install --upgrade pip
-    pip2 install scipy numpy matplotlib scikit-rf
     pip3 install scipy numpy matplotlib scikit-rf
 
     # Configure Vim
@@ -41,23 +48,30 @@ setup_arch() {
 
     # Update and install packages
     sudo pacman -Syu --noconfirm
-    sudo pacman -S --noconfirm zsh git curl powerline-fonts vim gcc clang python python-pip python2 \
+    sudo pacman -S --noconfirm zsh git curl powerline-fonts vim gcc clang python python-pip \
         base-devel cmake libtool boost
 
     # Install oh-my-zsh
+    if ! command -v zsh &> /dev/null; then
+        echo "Zsh is not installed. Installing..."
+        sudo pacman -S --noconfirm zsh
+    fi
+
     if [ ! -d "$HOME/.oh-my-zsh" ]; then
+        echo "Installing Oh My Zsh..."
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
         chsh -s $(which zsh)
     fi
 
     # Set oh-my-zsh theme
+    if [ ! -f "$HOME/.zshrc" ]; then
+        touch "$HOME/.zshrc"
+    fi
     sed -i 's/^ZSH_THEME=.*/ZSH_THEME="agnoster"/' ~/.zshrc
 
     # Install Python libraries
-    pip2 install --upgrade pip
-    pip3 install --upgrade pip
-    pip2 install scipy numpy matplotlib scikit-rf
-    pip3 install scipy numpy matplotlib scikit-rf
+    pip install --upgrade pip
+    pip install scipy numpy matplotlib scikit-rf
 
     # Configure Vim
     cat <<EOL >> ~/.vimrc
